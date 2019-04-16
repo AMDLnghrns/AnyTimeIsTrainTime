@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Train Time</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-3">Any Time is Train Time</h1>
+          <p class="lead">Choo Choo. Chee Chee.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card">
+          <div class="card-header">Current Train Schedule</div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">Frequency [Mins]</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="employee-name"></td>
+                  <td id="role"></td>
+                  <td id="start-year"></td>
+                  <td id="monthly-rate"></td>
+                  <td id="total-billed"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!--User Input Form-->
+      <div class="row mt-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">Add Train</div>
+            <div class="card-body">
+              <form id="time-form">
+                <label for="emp-name">Train Name</label>
+                <input class="form-control" id="emp-name" type="text" />
+                <label for="emp-role">Destination</label>
+                <input class="form-control" id="emp-role" type="text" />
+                <!-- <div class="form-group">
+                  <label for="emp-stday">First Train Time (Hour - military time)</label>
+                  <input class="form-control" type="number" id="emp-stday" />
+                </div>
+                <label for="emp-rate">First Train Time (Minute)</label>
+                <input class="form-control" id="emp-rate" type="number" /> -->
+
+                <div class="form-group">
+                  <label for="emp-stmonth">Time</label>
+                  <input class="form-control" type="time" id="emp-stmonth" />
+                </div>
+
+                <div class="form-row m-2">
+                  <div class="form-group">
+                    <label for="emp-styear">Frequency (min)</label>
+                    <input class="form-control" type="number" id="emp-styear" />
+                  </div>
+                </div>
+                <button class="btn btn-dark" id="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <!--jQuery-->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"
+    ></script>
+    <!--Moment.js-->
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <!--app.js-->
+    <script src="app.js"></script>
+  </body>
+</html>
