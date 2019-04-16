@@ -46,9 +46,9 @@ database.ref().on("child_added",function(snapshot) {
     // console.log(difference); //current time plus frequency
     // console.log(startTime); //first train time
     // console.log(endTime); //current time
-    console.log(timeDifference); //total time since the first train
-    console.log(minutesAway); //amount of time until the next train
-    console.log(trainTime); //exact time of the next train arrival
+    // console.log(timeDifference); //total time since the first train
+    // console.log(minutesAway); //amount of time until the next train
+    // console.log(trainTime); //exact time of the next train arrival
     
     //the next arrival does not update automatically until minutes away until it is one minute away. 
 
