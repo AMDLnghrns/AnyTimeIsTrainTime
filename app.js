@@ -20,7 +20,6 @@ $("#submit").click(function(event) {
   let month = $("#emp-stmonth").val(); //first train time
   let year = $("#emp-styear").val(); //frequency
 
-
   database.ref().push({
     employee: employee,
     role: role,
@@ -36,9 +35,10 @@ database.ref().on("child_added",function(snapshot) {
     let difference = moment(today,"hh:mm:ss").add(frequency,"minute").format("hh:mm");
     let startTime = moment.utc(months,"hh:mm");
     let endTime = moment.utc(today,"hh:mm");
-    let timeDifference = ((moment.duration(endTime.diff(startTime))/1000)/60); 
-    let minutesAway = ((Math.round((timeDifference/frequency)))*frequency) - timeDifference;
-    let trainTime = moment(startTime).add((Math.round((timeDifference/frequency))*frequency),"minutes").format("hh:mm");
+
+    let timeDifference = ((moment.duration(endTime.diff(startTime))/1000)/60);
+    let minutesAway = ((Math.ceil((timeDifference/frequency)))*frequency) - timeDifference;
+    let trainTime = moment(startTime).add((Math.ceil((timeDifference/frequency))*frequency),"minutes").format("hh:mm");
 
     // console.log(months); //first train time
     // console.log(today); //current time
@@ -46,10 +46,11 @@ database.ref().on("child_added",function(snapshot) {
     // console.log(difference); //current time plus frequency
     // console.log(startTime); //first train time
     // console.log(endTime); //current time
-    // console.log(timeDifference); //total time since the first train
-    // console.log(minutesAway); //amount of time until the next train
-    // console.log(trainTime); //exact time of the next train arrival
+    console.log(timeDifference); //total time since the first train
+    console.log(minutesAway); //amount of time until the next train
+    console.log(trainTime); //exact time of the next train arrival
     
+    //the next arrival does not update automatically until minutes away until it is one minute away. 
 
     $("tbody").append(`
     <tr>
